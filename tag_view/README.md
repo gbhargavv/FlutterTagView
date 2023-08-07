@@ -22,7 +22,7 @@ dependencies:
 ```dart
 import 'package:tag_view/tag_view.dart';
 
-late List<String> tags = ['Tag 1, Tag 2'];
+List<String> tags = ['Tag 1, Tag 2'];
 
 TagView(tags, isEnableDelete: true, tagBackgroundColor: Colors.blue)
 ```
