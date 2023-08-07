@@ -29,4 +29,4 @@ TagView(tags, isEnableDelete: true, tagBackgroundColor: Colors.blue)
 
 ## Usage
 
-<img src="https://github.com/gbhargavv/FlutterTagView/blob/master/tag_view/example.gif" align="left" width="20%">
+<img src="https://github.com/gbhargavv/FlutterTagView/blob/master/tag_view/images/example.gif" align="left" width="20%">
