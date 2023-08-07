@@ -24,8 +24,22 @@ import 'package:tag_view/tag_view.dart';
 
 List<String> tags = ['Tag 1, Tag 2'];
 
-TagView(tags, isEnableDelete: true, tagBackgroundColor: Colors.blue)
+TagView(_tags,
+    isEnableDelete: true,
+    tagBackgroundColor: Colors.blue,
+    onDelete: (deletePos) {
+        setState(() {
+            _tags.removeAt(deletePos);
+        });
+    },
+    onClick: (clickPos) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(_tags[clickPos].toString())));
+    }
+)
 ```
 
 ## Usage
+
+![Screenshot](https://github.com/gbhargavv/FlutterTagView/blob/master/tag_view/images/Screenshot_20230807_171112.png)
+
 ![Screenshot](https://github.com/gbhargavv/FlutterTagView/blob/master/tag_view/images/example.gif)

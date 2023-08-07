@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
       ),
       body: Container(
-        margin: EdgeInsets.all(30),
+        margin: EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
@@ -75,17 +75,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
             ),
-            SizedBox(
-              height: 20,
-            ),
-            TagView(
-              _tags,
-              isEnableDelete: true,
-              tagBackgroundColor: Colors.blue,
-            ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
+            TagView(_tags,
+                isEnableDelete: true,
+                tagBackgroundColor: Colors.blue,
+                onDelete: (deletePos) {
+                    setState(() {
+                    _tags.removeAt(deletePos);
+                    });
+                },
+                onClick: (clickPos) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(_tags[clickPos].toString())));
+                }),
+            SizedBox(height: 20),
             InkWell(
               onTap: () {
                 setState(() {
@@ -93,10 +95,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.all(Radius.circular(20))),
-                child: Text('Clear Tags', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-              ),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  child: Text('Clear Tags',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold))),
             )
           ],
         ),
