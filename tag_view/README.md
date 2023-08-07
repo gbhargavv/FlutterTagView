@@ -1,4 +1,4 @@
-![ezgif com-resize](https://github.com/gbhargavv/FlutterTagView/assets/67236943/e90c95ff-27ff-4363-87a7-ca1fa7641f8b)# tag_view
+# tag_view
 
 ## Get started
 
