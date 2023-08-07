@@ -51,9 +51,6 @@ class _TagView extends State<TagView> {
                       child: InkWell(
                         onTap: () {
                           widget.onDelete!(widget.tags.indexOf(i));
-                          /* setState(() {
-                            widget.tags.remove(i);
-                          }); */
                         },
                         child: Icon(
                           Icons.close_outlined,
