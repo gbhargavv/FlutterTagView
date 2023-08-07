@@ -1,39 +1,28 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# tag_view
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+## Get started
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+### Add dependency
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+You can use the command to add tag_view as a dependency with the latest stable version:
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```console
+$ dart pub add tag_view
 ```
 
-## Additional information
+Or you can manually add tag_view into the dependencies section in your pubspec.yaml:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```yaml
+dependencies:
+  tag_view: ^replace-with-latest-version
+```
+
+### Simple to use
+
+```dart
+import 'package:tag_view/tag_view.dart';
+
+late List<String> tags = ['Tag 1, Tag 2'];
+
+TagView(tags, isEnableDelete: true, tagBackgroundColor: Colors.blue)
+```
