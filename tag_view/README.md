@@ -26,3 +26,7 @@ late List<String> tags = ['Tag 1, Tag 2'];
 
 TagView(tags, isEnableDelete: true, tagBackgroundColor: Colors.blue)
 ```
+
+## Usage
+
+<img src="https://github.com/gbhargavv/FlutterTagView/blob/master/tag_view/example.gif" align="left" width="20%">
