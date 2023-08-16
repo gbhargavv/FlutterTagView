@@ -78,15 +78,14 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(height: 20),
             TagView(_tags,
                 isEnableDelete: true,
-                tagBackgroundColor: Colors.blue,
-                onDelete: (deletePos) {
-                    setState(() {
-                    _tags.removeAt(deletePos);
-                    });
-                },
-                onClick: (clickPos) {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(_tags[clickPos].toString())));
-                }),
+                tagBackgroundColor: Colors.blue, onDelete: (deletePos) {
+              setState(() {
+                _tags.removeAt(deletePos);
+              });
+            }, onClick: (clickPos) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(_tags[clickPos].toString())));
+            }),
             SizedBox(height: 20),
             InkWell(
               onTap: () {
