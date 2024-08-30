@@ -38,11 +38,7 @@ class _TagView extends State<TagView> {
               shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(20))),
               color: widget.tagBackgroundColor,
-              onPressed: () {
-                if (widget.onClick != null) {
-                  widget.onClick!(widget.tags.indexOf(i));
-                }
-              },
+              onPressed: () => widget.onClick?.call(widget.tags.indexOf(i)),
               child: Wrap(
                 crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
@@ -60,11 +56,8 @@ class _TagView extends State<TagView> {
                   Visibility(
                     visible: widget.isEnableDelete,
                     child: InkWell(
-                      onTap: () {
-                        if (widget.onDelete != null) {
-                          widget.onDelete!(widget.tags.indexOf(i));
-                        }
-                      },
+                      onTap: () =>
+                          widget.onDelete?.call(widget.tags.indexOf(i)),
                       child: const Icon(
                         Icons.close_outlined,
                         color: Colors.white,
