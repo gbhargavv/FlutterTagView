@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TagView extends StatefulWidget {
@@ -8,6 +7,7 @@ class TagView extends StatefulWidget {
   ValueChanged? onDelete;
   ValueChanged? onClick;
   final double spacing;
+  final double runSpacing;
 
   int deletePos = -1;
 
@@ -19,6 +19,7 @@ class TagView extends StatefulWidget {
     this.onDelete,
     this.onClick,
     this.spacing = 0,
+    this.runSpacing = 0,
   }) {}
 
   @override
@@ -32,6 +33,7 @@ class _TagView extends State<TagView> {
   Widget build(BuildContext context) {
     return Wrap(
       spacing: widget.spacing,
+      runSpacing: widget.runSpacing,
       children: widget.tags
           .map(
             (i) => MaterialButton(
