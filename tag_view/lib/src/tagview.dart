@@ -1,13 +1,26 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TagView extends StatefulWidget {
+  /// [tags] list of strings to be used for the displayed tags
   List<String> tags = [];
+
+  /// [isEnableDelete] will decide if tags can be deleted
   bool isEnableDelete;
+
+  /// [tagBackgroundColor] is used to set the color of the tags
   Color tagBackgroundColor;
+
+  /// [onDelete] callback that will kick off when a tag is deleted
   ValueChanged? onDelete;
+
+  /// [onClick] callback that will kick off when a tag is selected
   ValueChanged? onClick;
+
+  /// [spacing] space between tags on the horizontal axis
   final double spacing;
+
+  /// [runSpacing] space between tags on the vertical axis
+  final double runSpacing;
 
   int deletePos = -1;
 
@@ -19,6 +32,7 @@ class TagView extends StatefulWidget {
     this.onDelete,
     this.onClick,
     this.spacing = 0,
+    this.runSpacing = 0,
   }) {}
 
   @override
@@ -32,6 +46,7 @@ class _TagView extends State<TagView> {
   Widget build(BuildContext context) {
     return Wrap(
       spacing: widget.spacing,
+      runSpacing: widget.runSpacing,
       children: widget.tags
           .map(
             (i) => MaterialButton(
