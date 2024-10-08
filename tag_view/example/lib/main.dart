@@ -46,8 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text('Tag View',
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+        title: Text('Tag View', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
       ),
       body: Container(
         margin: EdgeInsets.all(20),
