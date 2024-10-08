@@ -5,7 +5,7 @@ class TagView extends StatefulWidget {
   List<String> tags = [];
   bool isEnableDelete;
   Color tagBackgroundColor;
-  Color tagTextolor;
+  Color tagTextColor;
   ValueChanged? onDelete;
   ValueChanged? onClick;
 
@@ -14,7 +14,7 @@ class TagView extends StatefulWidget {
   TagView(this.tags,
       {this.isEnableDelete = false,
       this.tagBackgroundColor = Colors.blueAccent,
-      this.tagTextolor = Colors.white,
+      this.tagTextColor = Colors.white,
       this.onDelete,
       this.onClick}) {}
 
@@ -45,7 +45,7 @@ class _TagView extends State<TagView> {
                       children: [
                         Text(i,
                             style: TextStyle(
-                                color: tagTextolor,
+                                color: tagTextColor,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 14)),
                         SizedBox(

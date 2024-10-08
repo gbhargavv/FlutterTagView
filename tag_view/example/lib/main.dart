@@ -77,7 +77,9 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(height: 20),
             TagView(_tags,
                 isEnableDelete: true,
-                tagBackgroundColor: Colors.blue, onDelete: (deletePos) {
+                tagBackgroundColor: Colors.blue,
+                tagTextColor: Colors.white,
+                onDelete: (deletePos) {
               setState(() {
                 _tags.removeAt(deletePos);
               });
