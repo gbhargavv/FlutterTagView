@@ -62,9 +62,11 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               onSubmitted: (value) {
                 setState(() {
-                  if (value.length == 0)
+                  var s = value.replaceAll(" ", "");
+                  if (value.length == 0 || s.length == 0){
                     _validateError = 'Enter Tag';
-                  else if (_tags.contains(value))
+                    _controller.text = '';
+                  } else if (_tags.contains(value))
                     _validateError = 'Tag Already added!';
                   else {
                     _validateError = '';
@@ -79,14 +81,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 isEnableDelete: true,
                 tagBackgroundColor: Colors.blue,
                 tagTextColor: Colors.white,
+                margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                 onDelete: (deletePos) {
-              setState(() {
-                _tags.removeAt(deletePos);
-              });
-            }, onClick: (clickPos) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(_tags[clickPos].toString())));
-            }),
+                  setState(() {
+                    _tags.removeAt(deletePos);
+                  });
+                }, onClick: (clickPos) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text(_tags[clickPos].toString())));
+                }),
             SizedBox(height: 20),
             InkWell(
               onTap: () {

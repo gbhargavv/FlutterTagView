@@ -8,6 +8,7 @@ class TagView extends StatefulWidget {
   Color tagTextColor;
   ValueChanged? onDelete;
   ValueChanged? onClick;
+  EdgeInsets? margin;
 
   int deletePos = -1;
 
@@ -15,6 +16,7 @@ class TagView extends StatefulWidget {
       {this.isEnableDelete = false,
       this.tagBackgroundColor = Colors.blueAccent,
       this.tagTextColor = Colors.white,
+      this.margin = const EdgeInsets.all(5),
       this.onDelete,
       this.onClick}) {}
 
@@ -34,7 +36,7 @@ class _TagView extends State<TagView> {
                   widget.onClick!(widget.tags.indexOf(i));
                 },
                 child: Container(
-                    margin: EdgeInsets.all(5),
+                    margin: widget.margin,
                     padding: const EdgeInsets.only(
                         top: 5.0, bottom: 5.0, left: 10, right: 5),
                     decoration: BoxDecoration(
@@ -45,7 +47,7 @@ class _TagView extends State<TagView> {
                       children: [
                         Text(i,
                             style: TextStyle(
-                                color: tagTextColor,
+                                color: widget.tagTextColor,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 14)),
                         SizedBox(
